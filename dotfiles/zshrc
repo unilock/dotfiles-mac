@@ -3,13 +3,10 @@ alias sudo='sudo '
 alias rm='trash'
 
 # PROMPT
-export PROMPT='[%m:%1~] %n%# '
+export PROMPT='[%B%F{40}%m%f%b:%B%F{39}%1~%f%b] %B%F{213}%n%f%b%# '
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# libimobiledevice
-PATH="/opt/libimobiledevice/bin:$PATH"
 
 # zsh-completions
 if type brew &>/dev/null; then
