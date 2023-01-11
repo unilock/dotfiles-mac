@@ -1,6 +1,11 @@
+# bashisms
+autoload -U select-word-style
+select-word-style bash
+
 # aliases
 alias sudo='sudo '
 alias rm='trash'
+alias ls='ls --color'
 
 # PROMPT
 export PROMPT='[%B%F{40}%m%f%b:%B%F{39}%1~%f%b] %B%F{213}%n%f%b%# '
@@ -13,5 +18,5 @@ if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
     autoload -Uz compinit
-    compinit
+    compinit -u
 fi
