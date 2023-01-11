@@ -1,0 +1,20 @@
+# aliases
+alias sudo='sudo '
+alias rm='trash'
+
+# PROMPT
+export PROMPT='[%m:%1~] %n%# '
+
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# libimobiledevice
+PATH="/opt/libimobiledevice/bin:$PATH"
+
+# zsh-completions
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi

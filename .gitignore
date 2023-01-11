@@ -1,0 +1,6 @@
+# macOS garbage
+._*
+.DS_Store
+
+# Windows garbage
+Thumbs.db

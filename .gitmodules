@@ -1,0 +1,3 @@
+[submodule "dotfiles-common"]
+	path = dotfiles-common
+	url = https://github.com/klutzies/dotfiles-common.git
