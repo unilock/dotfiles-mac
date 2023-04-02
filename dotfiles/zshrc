@@ -1,22 +1,45 @@
-# bashisms
+# -- INFINITE HISTORY!! --
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=999999999
+export SAVEHIST=999999999
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS
+
+# -- bashisms --
 autoload -U select-word-style
 select-word-style bash
 
-# aliases
+# -- aliases --
 alias sudo='sudo '
 alias rm='trash'
+alias grep='grep --color=always'
 alias ls='ls --color'
 
-# PROMPT
+alias quiltflower='java -jar $HOME/local/bin/quiltflower-1.9.0.jar'
+
+# -- PROMPT --
 export PROMPT='[%B%F{40}%m%f%b:%B%F{39}%1~%f%b] %B%F{213}%n%f%b%# '
 
+# -- PATH --
+# local bins
+export PATH="$HOME/local/bin:$PATH"
+
+# java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk17-zulu/Contents/Home"
+
+# etc.
+export EDITOR='subl'
+
+# -- misc --
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # zsh-completions
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+autoload -U compinit
+compinit -u
 
-    autoload -Uz compinit
-    compinit -u
-fi
+# shh
+source .zsecrets
