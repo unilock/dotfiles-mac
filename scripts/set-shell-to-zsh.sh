@@ -1,9 +1,11 @@
 #!/bin/sh
 source functions/common
 
-print_line "Setting up Homebrew Zsh."
+print_line "Setting up MacPorts zsh."
 
-echo '/opt/homebrew/bin/zsh' | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/zsh
-rm -f ~/.zcompdump; compinit
-chmod -R go-w "$(brew --prefix)/share"
+sudo sh -c 'echo /opt/local/bin/zsh >> /etc/shells'
+chpass -s '/opt/local/bin/zsh' $USER
+
+rm -f ~/.zcompdump
+autoload -U compinit
+compinit -u
