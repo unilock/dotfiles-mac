@@ -1,3 +1,7 @@
+# homebrew
+# (we put this up here to override PATH later)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # -- INFINITE HISTORY!! --
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=999999999
@@ -8,38 +12,56 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
 
-# -- bashisms --
-autoload -U select-word-style
+# -- modules --
+autoload -Uz bashcompinit
+autoload -Uz compinit
+autoload -Uz select-word-style
+autoload -Uz zmv
+bashcompinit
+compinit
 select-word-style bash
 
 # -- aliases --
-alias sudo='sudo '
-alias rm='trash'
+alias sudo='sudo ' # make sudo work w/ aliases
+alias bat='bat -pp'
+alias cat='bat'
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
 alias grep='grep --color=always'
 alias ls='ls --color'
+alias rm='trash'
 
-alias quiltflower='java -jar $HOME/local/bin/quiltflower-1.9.0.jar'
+alias 7z='7zz'
+alias java8='/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/bin/java'
 
-# -- PROMPT --
-export PROMPT='[%B%F{40}%m%f%b:%B%F{39}%1~%f%b] %B%F{213}%n%f%b%# '
+# -- exports --
+# > PROMPT <
+setopt PROMPT_SUBST
+export PROMPT='[%B%F{40}%m%f%b:%B%F{39}$(perl -pe "s/(\w)[^\/]+\/(?=.+\/)/\1\//g" <(print -P "%~"))%f%b] %B%F{213}%n%f%b%# '
 
-# -- PATH --
-# local bins
-export PATH="$HOME/local/bin:$PATH"
+# > PATH <
+# ex: "hello:world:$PATH"
+# - "hello" has top priority (overrides all lower binaries)
+# - "world" overrides $PATH, but not "hello"
+# - "$PATH" is mac's default PATH
+export PATH="$HOME/.local/bin:$PATH" # local bins
 
-# java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk17-zulu/Contents/Home"
-
-# etc.
+# > etc. <
 export EDITOR='subl'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home'
 
 # -- misc --
-# homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# sources
+. "$HOME/.zsecrets"
 
 # zsh-completions
-autoload -U compinit
-compinit -u
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-# shh
-source .zsecrets
+    autoload -Uz compinit
+    compinit
+fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
