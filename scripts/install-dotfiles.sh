@@ -7,5 +7,9 @@ print_line "Copying dotfiles."
 ditto -v dotfiles-common/dotfiles/gitconfig ~/.gitconfig
 ditto -v dotfiles-common/.gitignore ~/.gitignore
 
+# nano
+echo 'include "/opt/homebrew/share/nano/*.nanorc"' > ~/.nanorc
+cat dotfiles-common/nanorc >> ~/.nanorc
+
 # zsh
 ditto -v dotfiles/zshrc ~/.zshrc
