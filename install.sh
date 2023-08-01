@@ -15,6 +15,9 @@ git submodule update --init
 # Install apps / programs
 ./scripts/install-pkgs.sh
 
+# Install other programs (mostly in '~/.local/bin')
+./scripts/install-extra-pkgs.sh
+
 # Set defaults
 ./scripts/defaults-write.sh
 
