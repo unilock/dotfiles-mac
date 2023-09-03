@@ -12,6 +12,10 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_REDUCE_BLANKS
 
+# -- opts --
+setopt NO_LIST_AMBIGUOUS
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # -- modules --
 autoload -Uz bashcompinit
 autoload -Uz compinit
