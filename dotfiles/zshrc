@@ -2,6 +2,8 @@
 # (we put this up here to override PATH later)
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+fpath=($(brew --prefix)/share/zsh-completions $fpath)
+
 # -- INFINITE HISTORY!! --
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=999999999
@@ -36,7 +38,7 @@ alias ls='ls --color'
 alias rm='trash'
 
 alias 7z='7zz'
-alias java8='/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/bin/java'
+#alias java8='/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/bin/java'
 
 # -- exports --
 # > PROMPT <
@@ -57,14 +59,6 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home'
 # -- misc --
 # sources
 . "$HOME/.zsecrets"
-
-# zsh-completions
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
