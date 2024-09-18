@@ -9,7 +9,8 @@ ditto -v dotfiles-common/.gitignore ~/.gitignore
 
 # nano
 echo 'include "/opt/homebrew/share/nano/*.nanorc"' > ~/.nanorc
-cat dotfiles-common/nanorc >> ~/.nanorc
+cat dotfiles-common/dotfiles/nanorc >> ~/.nanorc
 
 # zsh
 ditto -v dotfiles/zshrc ~/.zshrc
+touch ~/.zsecrets

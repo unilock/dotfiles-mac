@@ -19,7 +19,6 @@ curl -L -o"$HOME/.local/vineflower-1.10.1.jar" https://github.com/Vineflower/vin
 echo 'java -Xms512M -Xmx4096M -jar $HOME/.local/vineflower-1.10.1.jar --indent-string="    " --thread-count=4 "$@"' > "$HOME/.local/bin/vineflower"
 
 chmod +x "$HOME/.local/bin/idea"
-chmod +x "$HOME/.local/bin/lsusb"
 chmod +x "$HOME/.local/bin/jargrep"
 chmod +x "$HOME/.local/bin/unbted"
 chmod +x "$HOME/.local/bin/vineflower"

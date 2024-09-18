@@ -8,4 +8,5 @@ if ( ! command -v brew ); then
     # Do the Homebrew thing.
     # NOTE: Homebrew will install Command Line Tools for us.
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
