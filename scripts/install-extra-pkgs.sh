@@ -3,6 +3,8 @@ source functions/common
 
 # Install unconventional packages.
 
+mkdir -p "$HOME/.local/bin"
+
 print_line "Installing IDEA wrapper."
 echo 'open -na "IntelliJ IDEA CE.app" --args "$@"' > "$HOME/.local/bin/idea"
 
