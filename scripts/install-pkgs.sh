@@ -13,7 +13,9 @@ print_line "Installing Homebrew formulae."
 cat lists/brew-formulae | xargs brew install --formula
 
 print_line "Installing Homebrew formulae. (--HEAD)"
-cat lists/brew-formulae-head | xargs brew install --formula --HEAD
+while IFS='' read -r line || [ -n "$line" ]; do
+	brew install --formula --HEAD $line
+done < lists/brew-formulae-head
 
 print_line "Installing Homebrew casks."
 cat lists/brew-casks | xargs brew install --cask
