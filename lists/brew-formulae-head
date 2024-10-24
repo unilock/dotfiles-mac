@@ -3,5 +3,6 @@ libtatsu
 libimobiledevice-glue
 libusbmuxd
 libimobiledevice
+ideviceinstaller
 libirecovery
 idevicerestore
