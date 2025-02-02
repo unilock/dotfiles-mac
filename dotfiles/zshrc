@@ -4,7 +4,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 fpath=($(brew --prefix)/share/zsh-completions $fpath)
 
-# -- INFINITE HISTORY!! --
+# -- INFINITE HISTORY --
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=999999999
 export SAVEHIST=999999999
@@ -54,7 +54,7 @@ export PATH="$HOME/.local/bin:$PATH" # local bins
 
 # > etc. <
 export EDITOR='subl'
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home'
 
 # -- misc --
 # sources

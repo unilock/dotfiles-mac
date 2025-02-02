@@ -1,3 +1,3 @@
 ```
-am i a super hacker yet!? >m<
+time to be a super hacker uwu
 ```

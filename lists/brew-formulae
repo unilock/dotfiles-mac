@@ -1,17 +1,8 @@
 bat
-binwalk
-coreutils
 curl
 dos2unix
 fd
-ffmpeg
-gallery-dl
 git
-gnu-sed
-grep
-htop
-imagemagick
-jq
 lsusb-laniksj
 macos-trash
 nano
@@ -24,9 +15,7 @@ python-tk
 ripgrep
 sevenzip
 tree
-util-linux
 wget
-yt-dlp
 zsh
 zsh-completions
 zsh-syntax-highlighting

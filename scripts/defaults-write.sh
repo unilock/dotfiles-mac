@@ -13,7 +13,7 @@ print_line "Disable Dock resizing"
 defaults write com.apple.dock size-immutable -bool true
 
 print_line "Set Dock size"
-defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 48
 
 print_line "Disable press-and-hold for accented characters"
 defaults write -g ApplePressAndHoldEnabled -bool false

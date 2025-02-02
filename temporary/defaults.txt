@@ -1,0 +1,112 @@
+[ -g ]
+"com.apple.mouse.scaling" = 2 // trackpad speed
+"com.apple.sound.beep.feedback" = 1
+"com.apple.swipescrolldirection" = 1
+"com.apple.trackpad.forceClick" = 0
+"KB_DoubleQuoteOption" = "\\U201cabc\\U201d"
+"KB_SingleQuoteOption" = "\\U2018abc\\U2019"
+AppleEnableSwipeNavigateWithScrolls = 0 // disables back/forth in browsers with swiping
+AppleHighlightColor = "1.000000 0.749020 0.823529 Pink"
+AppleICUDateFormatStrings = { 1 = "y-MM-dd"; }
+AppleInterfaceStyle = Dark
+AppleMiniaturizeOnDoubleClick = 0 // possibly
+AppleScrollerPagingBehavior = 0 // "go to location" instead of "next page" when clicking on scrollbars
+AppleShowAllExtensions = 1
+NSAutomaticCapitalizationEnabled = 0
+NSAutomaticDashSubstitutionEnabled = 0
+NSAutomaticInlinePredictionEnabled = 0
+NSAutomaticPeriodSubstitutionEnabled = 0
+NSAutomaticQuoteSubstitutionEnabled = 0
+NSAutomaticSpellingCorrectionEnabled = 0
+NSCloseAlwaysConfirmsChanges = 1
+NSFileViewer = "com.binarynights.ForkLift"
+WebAutomaticSpellingCorrectionEnabled = 0
+
+[ com.apple.AdLib ]
+allowApplePersonalizedAdvertising = 0
+
+[ com.apple.AppleMultitouchTrackpad ]
+// which ones of these are actually non-default...
+ActuateDetents = 0
+Clicking = 1
+Dragging = 1
+DragLock = 0
+FirstClickThreshold = 1
+ForceSuppressed = 1
+SecondClickThreshold = 1
+TrackpadCornerSecondaryClick = 0
+TrackpadFiveFingerPinchGesture = 0
+TrackpadFourFingerHorizSwipeGesture = 2
+TrackpadFourFingerPinchGesture = 0
+TrackpadFourFingerVertSwipeGesture = 2
+TrackpadHandResting = 1
+TrackpadHorizScroll = 1
+TrackpadMomentumScroll = 1
+TrackpadPinch = 1
+TrackpadRightClick = 1
+TrackpadRotate = 1
+TrackpadScroll = 1
+TrackpadThreeFingerDrag = 0
+TrackpadThreeFingerHorizSwipeGesture = 2
+TrackpadThreeFingerTapGesture = 0
+TrackpadThreeFingerVertSwipeGesture = 2
+TrackpadTwoFingerDoubleTapGesture = 1
+TrackpadTwoFingerFromRightEdgeSwipeGesture = 3
+
+[ com.apple.DiskUtility ]
+SidebarShowAllDevices = 1
+
+[ com.apple.WindowManager ]
+// do i need any of these?
+AppWindowGroupingBehavior = 1
+AutoHide = 1
+EnableStandardClickToShowDesktop = 0
+EnableTiledWindowMargins = 0
+GloballyEnabled = 0
+HasDisplayedShowDesktopEducation = 1
+HideDesktop = 1
+StageManagerHideWidgets = 0
+StandardHideWidgets = 0
+
+[ com.apple.assistant.support ]
+"Assistant Enabled" = 0
+
+[ com.apple.dock ]
+showDesktopGestureEnabled = 0
+showLaunchpadGestureEnabled = 0
+
+[ com.apple.finder ]
+FXDefaultSearchScope = SCcf
+FXEnableExtensionChangeWarning = 0
+FXICloudDriveDesktop = 0
+FXICloudDriveDocuments = 0
+FXICloudDriveEnabled = 0
+ShowExternalHardDrivesOnDesktop = 1
+ShowHardDrivesOnDesktop = 1
+ShowMountedServersOnDesktop = 1
+ShowRecentTags = 0
+ShowRemovableMediaOnDesktop = 1
+SidebarShowingiCloudDesktop = 0
+
+[ com.apple.loginwindow ]
+TALLogoutSavesState = 0 // i think this is the one that stops re-opening windows on reboot?
+
+[ com.apple.screencapture ]
+"last-selection-display" = 0
+"save-selections" = 0
+location = "~/Pictures/Screenshots" // mkdir this first
+
+[ com.apple.sharingd ]
+DiscoverableMode = Off // is this non-default?
+
+[ com.lwouis.alt-tab-macos ]
+menubarIcon = 3
+
+[ com.pilotmoon.scroll-reverser ]
+HideIcon = 1
+InvertScrollingOn = 1
+ReverseTrackpad = 0
+ReverseX = 1
+
+[ ??? ]
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType="public.folder";LSHandlerRoleAll="com.binarynights.ForkLift";}'
